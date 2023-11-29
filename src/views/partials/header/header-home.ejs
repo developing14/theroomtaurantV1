@@ -1,0 +1,14 @@
+<nav class="navigation text-dark">
+  <a href="#about">About us</a>
+  <a href="#menu">Menu</a>
+  <a href="#order-banner">Our services</a>
+  <a href="/order">Our dishes</a>
+</nav>
+
+<nav class="user right">
+  <% if (ID) { %>
+  <a href="/profile"> Profile</a>
+  <% } else { %>
+  <a href="/auth">Signup / Login</a>
+  <% } %>
+</nav>

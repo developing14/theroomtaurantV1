@@ -1,0 +1,12 @@
+<% items.forEach(function(item){ %>
+<div id="" class="item">
+  <h2 class="title"><%=item.pd_name%></h2>
+  <img class="pdImg" src="../../..<%=item.pd_img%>" alt="img-product" />
+  <p class="cost">Cost: <%=item.pd_cost%></p>
+  <p class="intro"><%=item.pd_intro%></p>
+
+  <button onclick="openModal()" type="button" data-id="<%=item.pd_ID  %>">
+    order
+  </button>
+</div>
+<% }); %>

@@ -1,0 +1,181 @@
+@import 'global';
+
+// Modal
+
+.modal-container {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  border: 2px solidc $dark-color;
+  background-color: $white-color;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal .title-bar {
+  padding: 12px;
+  background-color: $dark-color;
+  width: 100%;
+  text-align: center;
+}
+
+.modal .title-bar button {
+  float: right;
+  color: $dark-color;
+  padding: 4px 4px;
+  border: none;
+}
+
+.modal .title {
+  display: inline-block;
+  margin: auto auto;
+}
+
+.modal .title h1 {
+  color: $light-color;
+  text-align: center;
+}
+
+.modal form {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.modal .form-panel {
+  text-transform: capitalize;
+}
+
+.modal form label,
+.modal form select,
+.modal form input,
+.modal form option {
+  font-size: 24px;
+  margin-bottom: 12px;
+  height: 24px;
+}
+
+#msg {
+  min-height: 150px;
+}
+
+#order-submit-btn {
+  width: 25%;
+  padding: 12px 36px;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: $dark-color;
+  color: $light-color;
+  border: none;
+  margin-bottom: 16px;
+}
+
+#order-submit-btn:hover {
+  background-color: $medium-color;
+}
+
+// Menu
+
+.menu-container {
+  display: grid;
+  grid-template-columns: 320px 320px 320px 320px;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  padding: 16px;
+  width: calc(100vw - 220px);
+  background-color: $light-color;
+}
+
+.menu-container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-color;
+  max-height: 450px;
+  width: 100%;
+  gap: 10px;
+}
+
+.menu-container .title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu-container .title,
+.menu-container .cost {
+  color: $light-color;
+  margin: 8px 0;
+}
+
+.menu-container img {
+  width: 80%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-container .intro {
+  color: $light-color;
+  height: 120px;
+  width: 90%;
+}
+
+.menu-container button {
+  position: relative;
+  padding: 12px 24px;
+  cursor: pointer;
+  border: none;
+}
+
+.menu-container button:hover {
+  background-color: $medium-color;
+}
+
+// Request
+
+.request-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 16px 32px;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+.request-item {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border: 2px solid $dark-color;
+  padding: 12px 16px;
+  max-height: 180px;
+  max-width: 200px;
+}
+
+.request-item > * {
+  margin: 4px 0;
+}
+
+span.status {
+  border: 0.5px solid $dark-color;
+  padding: 4px;
+  margin-top: 16px;
+}
+
+span.status.denied {
+  background-color: $orange-color;
+}
+
+span.status.waiting {
+  background-color: $yellow-color;
+}
+
+span.status.confirmed {
+  background-color: $gray-color;
+}

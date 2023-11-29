@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="../../public/CSS/management.css" />
+  </head>
+  <body>
+    <header class="mini">
+      <%- include('../partials/header/header-mini.ejs')%>
+    </header>
+    <article class="management-content flex-horizontal">
+      <aside class="staff flex-center flex-vertical">
+        <%- include('../components/management/management-sidemenu.ejs') %>
+      </aside>
+
+      <% if (page=='productBoard') {%>
+
+      <section class="product-mng-container content-container">
+        <%- include('../components/management/management-productBoard.ejs') %>
+      </section>
+      <section id="edit" class="modal-container">
+        <%-
+        include('../components/management/management-editProduct-modal.ejs')%>
+      </section>
+      <section id="add" class="modal-container">
+        <%-
+        include('../components/management/management-addProduct-modal.ejs')%>
+      </section>
+      <script src="../../public/JS/management/mng-productBoard.js"></script>
+      <%}%>
+      <!--  -->
+      <%if (page === 'requestList') { %>
+      <section class="request-mng-container content-container">
+        <%- include('../components/management/management-requestList.ejs') %>
+      </section>
+      <%}%>
+    </article>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
+</html>

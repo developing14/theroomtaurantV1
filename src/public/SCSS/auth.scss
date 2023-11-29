@@ -1,0 +1,150 @@
+@import 'global';
+
+body {
+  background: $img-user top center / cover no-repeat;
+  backdrop-filter: blur(5px);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 30px;
+  margin: 16px 0;
+}
+
+// Overlay
+
+section.overlay-container {
+  position: absolute;
+  top: 10%;
+  height: 75%;
+  width: 75%;
+  background: $img-user top center / cover no-repeat;
+  border: 5px solid #111;
+  filter: brightness(125%);
+}
+
+.overlay {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+}
+
+.overlay-content {
+  height: 100%;
+  width: 100%;
+  margin-top: 35%;
+}
+
+.overlay-content p {
+  color: $light-color;
+  font-weight: 700;
+}
+
+.overlay-panel {
+  background-color: $dark-color;
+  opacity: 0.7;
+  height: 100%;
+}
+
+.overlay button {
+  font-size: 16px;
+}
+
+// Form
+
+.form-container {
+  position: absolute;
+  padding: 12px 24px;
+  height: 100%;
+  width: 50%;
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+.form-container form,
+.form-container input {
+  width: 90%;
+}
+
+.form-container input {
+  padding: 14px;
+  margin: 15px 0;
+  font-size: 16px;
+  color: $dark-color;
+}
+
+.form-container form {
+  margin: auto auto;
+}
+
+.login-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.register-container {
+  display: none;
+  grid-template-rows: auto auto auto;
+}
+
+// Hide by default
+#content-left {
+  display: none;
+}
+
+// Message modal
+//
+// Show up when user submit invalid information
+.modal-container {
+  display: grid;
+  width: 100vw;
+  height: 100%;
+  place-items: center;
+  background-color: $dark-trans-color;
+}
+
+#modal {
+  position: relative;
+  min-width: 400px;
+  background-color: $light-color;
+  border: 1px solid $dark-color;
+}
+
+.modal-title {
+  background-color: $dark-color;
+  padding: 20px 16px;
+}
+
+.modal-title > * {
+  display: inline-block;
+}
+
+.modal-title p {
+  color: $light-color;
+  text-transform: uppercase;
+}
+
+.modal-title button {
+  padding: 8px 12px;
+  border: none;
+  float: right;
+}
+
+.modal-content h1 {
+  margin: 12px 16px;
+}
+
+.modal-content p {
+  padding: 12px;
+}
+
+.modal-content h1::before {
+  content: '⚠️ ';
+}
+
+.modal-content p::before {
+  content: '- ';
+}

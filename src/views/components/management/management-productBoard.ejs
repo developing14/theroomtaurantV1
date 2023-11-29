@@ -1,0 +1,44 @@
+<!-- This button will show the modal to add more product -->
+<div id="addProduct-container">
+  <button type="button" onclick="openAddModal()">Add new product</button>
+</div>
+<!-- Item containers-->
+<% prods.forEach((prod)=>{ %>
+<div id="pd<%=prod.pd_ID%>" class="item">
+  <h2 class="title"><%=prod.pd_name%></h2>
+  <img class="pdImg" src="../../..<%=prod.pd_img%>" alt="img-product" />
+  <p class="intro"><%= prod.pd_intro %></p>
+  <p class="cost">Cost: <%=prod.pd_cost%></p>
+
+  <!-- Pass the unique ID to the button -->
+  <div class="button-group">
+    <% if (!prod.isDeleted) { %>}
+    <button
+      class="del-pd-btn"
+      onclick="window.location.reload()"
+      type="button"
+      data-id="<%=prod.pd_ID%>"
+    >
+      Delete product
+    </button>
+    <% } else {%>
+    <button
+      class="res-pd-btn"
+      onclick="window.location.reload()"
+      type="button"
+      data-id="<%=prod.pd_ID%>"
+    >
+      Restore product
+    </button>
+    <%}%>
+    <button
+      class="edit-pd-btn"
+      onclick="openEditModal()"
+      type="button"
+      data-id="<%= prod.pd_ID %>"
+    >
+      Edit
+    </button>
+  </div>
+</div>
+<% }); %>

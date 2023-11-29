@@ -1,0 +1,25 @@
+<% reqs.forEach((req)=> { %>
+
+<div class="request-item">
+  <h1 class="date"><%=req.orderDay%></h1>
+  <p class="time">Time:<%=req.orderTime%></p>
+  <p class="dish">Dish:<%=req.pd_Name%></p>
+  <p class="table">Table:<%=req.tb_name%></p>
+
+  <!--  -->
+  <%if (req.rq_Status=='waiting'){%>
+  <span class="status waiting">Waiting</span>
+  <%}%>
+
+  <!--  -->
+  <%if (req.rq_Status=='denied'){%>
+  <span class="status denied">Denied</span>
+  <%}%>
+
+  <!--  -->
+  <%if (req.rq_Status=='confirmed'){%>
+  <span class="status confirmed">Confirmed</span>
+  <%}%>
+</div>
+
+<%})%>

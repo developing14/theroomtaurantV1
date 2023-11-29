@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="../../public/CSS/services.css" />
+  </head>
+  <body>
+    <header class="mini">
+      <%- include('../partials/header/header-mini.ejs')%>
+    </header>
+    <article class="order-content flex-horizontal">
+      <aside class="customer flex-vertical flex-center">
+        <%- include('../components/service/service-sidemenu.ejs')%>
+      </aside>
+
+      <!-- If controller send response with page ='order', render menu and the order modal-->
+      <% if (page==='order') { %>
+      <section class="modal-container" id="order-modal">
+        <%- include('../components/service/service-modal.ejs')%>
+      </section>
+      <section id="order-menu" class="menu-container content-container">
+        <%- include('../components/service/service-menu.ejs') %>
+      </section>
+      <% } %>
+
+      <!-- If controller send response with page ='request', render request board -->
+      <% if (page==='request') { %>
+      <section id="request-list" class="request-container content-container">
+        <%- include('../components/service/service-request.ejs')%>
+      </section>
+      <% } %>
+    </article>
+    <script src="../../public/JS/services/services-modal.js"></script>
+  </body>
+</html>

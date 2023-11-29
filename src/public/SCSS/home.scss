@@ -1,0 +1,259 @@
+@import 'global';
+
+section.content {
+  width: 100%;
+  padding: 16px 32px;
+}
+
+section.content span {
+  text-transform: uppercase;
+}
+
+section.content .title {
+  text-align: center;
+  margin: 24px 0;
+}
+
+section.content .text {
+  display: block;
+  margin: 14px 0;
+}
+
+section .title {
+  text-align: center;
+  margin: 10px 0;
+  padding: 32px 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+section .text {
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 18px 0;
+}
+
+section .text-panel {
+  background-color: #e5ccaf;
+  border-left: 6px solid #ccc;
+  line-height: 1.6;
+  padding: 0 16px;
+  font-size: 20px;
+}
+
+section .text-panel .panel-content {
+  font-style: italic;
+}
+
+// NAVIGATION
+
+nav {
+  align-content: center;
+}
+
+nav.user {
+  display: grid;
+  grid-template-columns: auto;
+  width: auto;
+}
+
+nav.navigation {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 50%;
+  background-color: $dark-color;
+}
+
+nav.user a,
+nav.navigation a {
+  padding: 11px 24px;
+  text-align: center;
+  background-color: $dark-color;
+  color: $light-color;
+  text-transform: uppercase;
+  width: 100%;
+  max-height: 100%;
+}
+nav.user a:hover,
+nav.navigation a:hover {
+  background-color: $medium-color;
+  color: $dark-color;
+}
+
+// SLIDESHOW/BANNER
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  top: 38.5px;
+}
+
+.slideshow-container img {
+  min-height: 75%;
+}
+
+.slideshow-item {
+  overflow: hidden;
+  display: none;
+  height: 400px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.slideshow-container .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Fading animation */
+.slideshow-container .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// ABOUT
+
+.img-intro {
+  align-items: center;
+  padding: 16px 0;
+}
+
+.img-intro img {
+  width: 75%;
+}
+
+// MENU
+
+#menu-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-item,
+.menu-item > * {
+  margin: 16px 0;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto 250px;
+  grid-column-gap: 16px;
+  overflow: hidden;
+  border-bottom: 1px dashed $light-color;
+  margin-bottom: 16px;
+}
+
+.menu-item .name {
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.menu-item .cost {
+  text-align: center;
+  align-self: center;
+}
+
+// ORDER-BANNER
+
+#order-banner {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 300px;
+  place-items: center;
+  background: $img-banner2 50% center / cover no-repeat;
+}
+
+#order-banner .banner-item {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+#order-banner .banner-item h1 {
+  position: absolute;
+  display: none;
+  bottom: 25%;
+  text-transform: capitalize;
+  transition: display 0.3s;
+}
+
+#order-banner .banner-item:hover {
+  background-color: $dark-color;
+}
+
+#order-banner .banner-item:hover button {
+  border-color: $light-color;
+  color: $light-color;
+}
+
+#order-banner .banner-item:hover h1 {
+  display: block;
+  color: $light-color;
+}
+
+button.order {
+  display: inline-block;
+  cursor: pointer;
+  width: 250px;
+  margin: 0 auto;
+  padding: 22px 34px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+button.order.transparent:hover {
+  background-color: $light-color !important;
+  color: $dark-color !important;
+}
+
+button.order.dark:hover {
+  background-color: $light-color !important;
+  color: $dark-color !important ;
+}

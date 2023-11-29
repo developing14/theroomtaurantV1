@@ -1,0 +1,24 @@
+<div class="detail-content">
+  <h1 class="title">Account profile</h1>
+  <section class="information-container">
+    <div class="information-controller">
+      <strong>Name:</strong>
+      <% customer.forEach(function(customer) { %>
+      <p id="profile-name"><%= customer.ctm_name %></p>
+      <% }) %>
+    </div>
+    <div class="information-controller">
+      <strong>Email:</strong>
+      <% customer.forEach(function(customer) { %>
+      <p id="profile-email"><%= customer.ctm_email %></p>
+      <% }) %>
+    </div>
+    <div class="information-controller">
+      <strong>Phone:</strong>
+      <% customer.forEach(function(customer) { %>
+      <p id="profile-phone"><%= customer.ctm_phone %></p>
+      <% }) %>
+    </div>
+  </section>
+  <button class="dark" onclick="openModal()" type="button">Edit</button>
+</div>

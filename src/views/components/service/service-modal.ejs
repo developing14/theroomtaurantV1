@@ -1,0 +1,44 @@
+<section class="modal flex-vertical">
+  <div class="title-bar">
+    <div class="title"><h1>Preorder</h1></div>
+    <button type="button" onclick="closeModal()">X</button>
+  </div>
+  <form
+    method="post"
+    action="/order"
+    enctype="application/x-www-form-urlencoded"
+    id="form-order"
+  >
+    <div class="labels flex-vertical .form-panel">
+      <label for="orderdate">Date:</label>
+      <label for="ordertime">Time:</label>
+      <label for="product">Dish</label>
+      <label for="msg">Message</label>
+    </div>
+    <div class="input flex-vertical .form-panel">
+      <input type="date" name="date" id="orderdate" required />
+      <select name="time" id="ordertime">
+        <option value="6am to 8am">6am to 8am</option>
+        <option value="9am to 11am">9am to 11am</option>
+        <option value="12am to 14pm">12am to 14pm</option>
+        `
+        <option value="15pm to 17pm">15pm to 17pm</option>
+        <option value="18pm to 20pm">18pm to 20pm</option>
+        <option value="21pm to 23pm">21pm to 23pm</option>
+      </select>
+      <select name="product" id="product" autofocus>
+        <% items.forEach((item) => { %>
+        <option value="<%=item.pd_ID%>"><%=item.pd_name%></option>
+
+        <%})%>
+      </select>
+      <input
+        type="text"
+        placeholder=" Leave us a message"
+        id="msg"
+        name="msg"
+      />
+    </div>
+  </form>
+  <input id="order-submit-btn" type="submit" value="Order" form="form-order" />
+</section>

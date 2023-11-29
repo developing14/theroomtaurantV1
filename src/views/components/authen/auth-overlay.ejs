@@ -1,0 +1,35 @@
+<section class="overlay">
+  <div class="overlay-panel overlay-panel-left">
+    <div id="content-left" class="overlay-content">
+      <p class="title">You have an account ?</p>
+      <button
+        onclick="showLogin()"
+        class="submit dark-btn borderWhite"
+        id="login"
+        type="button"
+      >
+        LOG(it)IN !
+      </button>
+    </div>
+    <section id="login-form" class="form-container login-container">
+      <%- include('auth-login.ejs')%>
+    </section>
+  </div>
+
+  <div class="overlay-panel overlay-panel-right">
+    <div id="content-right" class="overlay-content">
+      <p class="title">You are new here ?</p>
+      <button
+        onclick="showRegister()"
+        class="submit dark-btn borderWhite"
+        id="register"
+        type="button"
+      >
+        SIGN(a new one)UP !
+      </button>
+    </div>
+    <section id="register-form" class="form-container register-container">
+      <%- include('auth-register.ejs')%>
+    </section>
+  </div>
+</section>

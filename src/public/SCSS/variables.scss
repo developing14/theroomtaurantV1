@@ -1,0 +1,37 @@
+// -- Color
+
+// Single color
+$light-color: #fdf5e6;
+$dark-color: #000000;
+$medium-color: rgb(97, 97, 97);
+$white-color: rgb(255, 255, 255);
+$orange-color: #ec8c69;
+$gray-color: #f7f0f0;
+$cyan-color: #8af3ff;
+$yellow-color: #fff7ae;
+
+// Opacity-Transparent Color:
+$transparent: rgba(0, 0, 0, 0);
+$light-trans-color: rgba(253, 245, 230, 0.5);
+$dark-trans-color: rgba(0, 0, 0, 0.5);
+$medium-trans-color: rgba(97, 97, 97, 0.5);
+$white-trans-colorL: rgba(255, 255, 255, 0.5);
+
+// --Text
+
+// Font:
+$main-font: 'Inconsolata', Arial, sans-serif;
+$secondary-font: 'Segoe UI', Arial, sans-serif;
+
+// -- Image
+
+$img-user: url('../../public/img/images/auth/img-user.jpg');
+
+$img-banner1: url('../../public/img/images/img-order2.jpeg');
+$img-banner2: url('../../public/img/images/img-order3.jpeg');
+
+// --Size
+
+// Sidemenu
+$aside-menu-width: 200px;
+$aside-item-width: 170px;

@@ -1,0 +1,218 @@
+@import 'global';
+
+// Product board
+
+.product-mng-container {
+  display: grid;
+  grid-template-columns: 280px 280px 280px 280px;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  padding: 16px;
+  width: calc(100vw - 220px);
+  background-color: $light-color;
+  overflow: hidden;
+}
+
+.product-mng-container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-color;
+  max-height: 450px;
+  width: 100%;
+}
+
+.product-mng-container .title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 8px 0;
+  color: $light-color;
+}
+
+.product-mng-container .intro,
+.product-mng-container .cost {
+  color: $light-color;
+  margin: 8px 0;
+}
+
+.product-mng-container .intro {
+  height: 120px;
+  width: 90%;
+}
+
+.product-mng-container img {
+  width: 100%;
+  height: 185px;
+  padding: 16px;
+  object-fit: cover;
+}
+
+.product-mng-container button {
+  padding: 12px 24px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  border: none;
+}
+
+.product-mng-container button.del-pd-btn {
+  background-color: $orange-color;
+}
+
+.product-mng-container button.res-pd-btn {
+  background-color: $cyan-color;
+}
+
+.product-mng-container button:hover {
+  background-color: $medium-color;
+}
+
+#addProduct-container {
+  max-height: 450px;
+  display: grid;
+  place-content: center;
+  align-content: center;
+  background-color: $dark-color;
+}
+
+// Modal
+
+.modal-container {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
+  border: 2px solidc $dark-color;
+  background-color: $white-color;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid $dark-color;
+}
+
+.modal .title-bar {
+  padding: 12px;
+  background-color: $dark-color;
+  width: 100%;
+  text-align: center;
+}
+
+.modal .title-bar button {
+  float: right;
+  width: 20px;
+  color: $dark-color;
+  padding: 4px 4px;
+  border: none;
+}
+
+.modal .title {
+  display: inline-block;
+  margin: auto auto;
+}
+
+.modal .title h1 {
+  color: $light-color;
+  text-align: center;
+}
+
+.modal form {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.modal .form-panel {
+  text-transform: capitalize;
+}
+
+.modal form label,
+.modal form input {
+  font-size: 16px;
+  margin-bottom: 12px;
+  height: 24px;
+}
+
+#add-submit-btn,
+#edit-submit-btn {
+  width: 25%;
+  padding: 12px 36px;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: $dark-color;
+  color: $light-color;
+  border: none;
+  margin-bottom: 16px;
+}
+
+// Request management
+
+.request-mng-container {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 16px;
+  width: 80vw;
+  gap: 12px;
+}
+
+.request-mng-container .request-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 16px 24px;
+  min-height: 100px;
+  background-color: $dark-color;
+  width: 100%;
+  place-items: center;
+  gap: 64px;
+}
+.request-mng-container .request-item *:not(.button-group) {
+  max-width: 200px;
+  width: 100px;
+}
+
+.request-mng-container .button-group {
+  position: absolute;
+  right: 0;
+  padding: 12px 24px;
+}
+
+.request-mng-container .button-group button {
+  padding: 12px 24px;
+  border: none;
+}
+
+.request-mng-container .button-group button.confirm {
+  background-color: $cyan-color;
+}
+
+.request-mng-container .button-group button.deny {
+  background-color: $orange-color;
+}
+
+.request-mng-container .request-item p {
+  color: $light-color;
+}
+
+span.status {
+  border: 0.5px solid $dark-color;
+  padding: 4px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+span.status.denied {
+  background-color: $orange-color;
+}
+
+span.status.waiting {
+  background-color: $yellow-color;
+}
+
+span.status.confirmed {
+  background-color: $gray-color;
+}

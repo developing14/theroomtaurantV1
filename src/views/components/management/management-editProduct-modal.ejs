@@ -1,0 +1,32 @@
+<section class="modal flex-vertical">
+  <div class="title-bar">
+    <div class="title"><h1>Edit product</h1></div>
+    <button class="escape" type="button" onclick="closeEditModal()">X</button>
+  </div>
+  <form
+    method="post"
+    action="/product-edit"
+    enctype="multipart/form-data"
+    id="form-edit"
+  >
+    <div class="labels flex-vertical .form-panel">
+      <label for="pdName">Name</label>
+      <label for="pdCost">Cost:</label>
+      <label for="pdImg">Image</label>
+      <label for="pdIntro">Intro</label>
+    </div>
+    <div class="input flex-vertical .form-panel">
+      <input type="text" name="pdName" id="pdNewName" required />
+      <input type="text" name="pdCost" id="pdNewCost" required />
+      <input type="file" name="pdImg" id="pdNewImg" accept="Image/*" required />
+      <input type="text" name="pdIntro" id="pdNewIntro" required />
+    </div>
+  </form>
+  <input
+    id="edit-submit-btn"
+    type="submit"
+    value="Edit"
+    onclick="closeEditModal()"
+    form="form-edit"
+  />
+</section>

@@ -1,0 +1,42 @@
+<form
+  action="/register"
+  method="post"
+  enctype="application/x-www-form-urlencoded"
+>
+  <h1 class="title">Register</h1>
+  <input
+    type="text"
+    name="username"
+    id="registerUsername"
+    placeholder="Name"
+    title="Must not contain any non-alphabet character"
+    required
+  />
+  <input
+    type="text"
+    name="phone"
+    id="registerPhone"
+    placeholder="Phone number"
+    title="Must contain a valid phone number"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    id="registerEmail"
+    placeholder="Email"
+    title="Must contain a valid domain name"
+    required
+  />
+  <input
+    type="password"
+    name="psw"
+    id="registerPsw"
+    placeholder="Password"
+    title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
+    required
+  />
+  <button class="submit formSubmit light-btn" type="submit" value="submit">
+    Signup
+  </button>
+</form>

@@ -1,0 +1,31 @@
+@import 'global';
+
+.form-container {
+  position: absolute;
+  padding: 12px 24px;
+  height: 100%;
+  width: 100%;
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+.form-container form,
+.form-container input {
+  width: 50%;
+}
+
+.form-container input {
+  padding: 14px;
+  margin: 15px 0;
+  font-size: 16px;
+  color: $dark-color;
+}
+
+.form-container form {
+  margin: auto auto;
+}
+
+.login-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}

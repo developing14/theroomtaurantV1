@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="../../public/CSS/home.css" />
+  </head>
+  <body>
+    <header class="fixed">
+      <%- include('../partials/header/header-home.ejs')%>
+    </header>
+    <section class="slideshow-container">
+      <%- include('../components/home/home-slideshow.ejs') %>
+    </section>
+    <section id="about" class="about content theme-light">
+      <%- include('../components/home/home-about.ejs') %>
+    </section>
+    <section id="menu" class="content theme-dark flex-vertical">
+      <%- include('../components/home/home-menu.ejs') %>
+    </section>
+    <section id="order-banner">
+      <%- include('../components/home/home-banner.ejs')%>
+    </section>
+    <footer><%- include('../partials/footer.ejs')%></footer>
+    <script src="../../public/JS/home/home-slideshow.js"></script>
+  </body>
+</html>

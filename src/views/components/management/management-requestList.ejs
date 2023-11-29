@@ -1,0 +1,39 @@
+<% reqs.forEach((req => {%>
+
+<div class="request-item">
+  <p class="name"><%=req.ctm_name%></p>
+  <p class="phone"><%=req.ctm_phone%></p>
+  <p class="date"><%=req.orderDay%></p>
+  <p class="time"><%=req.orderTime%></p>
+  <!--  -->
+  <%if (req.rq_Status=='waiting'){%>
+  <span class="status waiting">Waiting</span>
+  <%}%>
+
+  <!--  -->
+  <%if (req.rq_Status=='denied'){%>
+  <span class="status denied">Denied</span>
+  <%}%>
+
+  <!--  -->
+  <%if (req.rq_Status=='confirmed'){%>
+  <span class="status confirmed">Confirmed</span>
+  <%}%>
+  <div class="button-group">
+    <button
+      class="confirm"
+      data-id=""
+      onclick="location.href='/confirm/<%=req.rq_ID%>'"
+    >
+      Confirm
+    </button>
+    <button
+      class="deny"
+      data-id="<%=req.rq_ID%>"
+      onclick="location.href='/deny/<%=req.rq_ID%>'"
+    >
+      Deny
+    </button>
+  </div>
+</div>
+<% })) %>

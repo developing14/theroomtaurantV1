@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/head.ejs')%>
+    <link rel="stylesheet" href="../../public/CSS/auth.css" />
+  </head>
+  <body class="flex-vertical flex-center">
+    <header class="mini">
+      <%- include('../partials/header/header-mini.ejs')%>
+    </header>
+    <section class="overlay-container">
+      <%- include ('../components/authen/auth-overlay.ejs') %>
+    </section>
+    <!--  -->
+    <%if (invalid){%>
+    <section id="register-fail" class="modal-container">
+      <%- include('../components/authen/auth-registerFail.ejs')%>
+    </section>
+    <%}%>
+    <!--  -->
+    <!--  -->
+    <%if (incorrect) {%>
+    <section id="login-fail" class="modal-container">
+      <%- include('../components/authen/auth-loginFail.ejs')%>
+    </section>
+    <%}%>
+    <!--  -->
+    <script src="../../public/JS/authentication/auth-forms.js"></script>
+    <script src="../../public/JS/authentication/auth-modal.js"></script>
+  </body>
+</html>

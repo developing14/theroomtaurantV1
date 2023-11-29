@@ -1,0 +1,25 @@
+<div class="logo-container">
+  <img src="../../public/img/images/img-menu.jpg" alt="" />
+</div>
+<%if (user) {%>
+<button onclick="location.href ='/profile'" class="profile light" type="button">
+  Profile
+</button>
+
+<%}%>
+<button onclick="location.href='/order'" class="order light" type="button">
+  Order
+</button>
+<% if (user) { %>
+<button onclick="location.href='/request'" class="request light" type="button">
+  Request
+</button>
+
+<button
+  class="logout dark outline-light"
+  type="button"
+  onclick="location.href='/logout'"
+>
+  Logout
+</button>
+<%}%>

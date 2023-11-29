@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="../../public/CSS/staff-login.css" />
+  </head>
+  <body class="flex-vertical flex-center">
+    <section class="form-container login-container">
+      <form
+        action="/management-login"
+        method="post"
+        enctype="application/x-www-form-urlencoded"
+        class="flex-vertical flex-center"
+      >
+        <h1 class="title">Login</h1>
+        <input
+          id="staffLoginEmail"
+          name="email"
+          type="email"
+          class="email-2"
+          placeholder="Email"
+          required
+        />
+        <input
+          id="StaffLoginPsw"
+          name="psw"
+          type="password"
+          class="password-2"
+          placeholder="Password"
+          required
+        />
+
+        <button
+          class="submit formSubmit light-btn"
+          type="submit"
+          value="submit"
+        >
+          Login
+        </button>
+      </form>
+    </section>
+  </body>
+</html>
