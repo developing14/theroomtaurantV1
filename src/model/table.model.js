@@ -1,14 +1,4 @@
-/**
-MODULE MANAGEMENT
- * 
- * 
- * 
- */
-const express = require('express');
 const dataConnection = require('../connection/dataConnection');
-const { resolve } = require('path');
-const { rejects } = require('assert');
-const { compareSync } = require('bcrypt');
 
 // Add new table into database
 exports.addTable = (name) => {
@@ -17,11 +7,10 @@ exports.addTable = (name) => {
 
 // Find table by its name in database, return a boolean value respectively
 exports.findTable = (name) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT * FROM tables WHERE tb_name='${name}'`,
-      (err, result, field) => {
-        if (err) throw err;
+      (err, result) => {
         if (result.length > 0) resolve(true);
         else resolve(false);
       }
@@ -48,7 +37,7 @@ exports.restoreTable = (ID) => {
 
 // Get the ID of an empty table at the specific date and time
 exports.getEmptyTable = (oDate, oTime) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT tb_ID FROM tables
 WHERE tb_ID NOT IN (
@@ -57,7 +46,7 @@ WHERE tb_ID NOT IN (
     WHERE orderDay = '${oDate}' AND orderTime = '${oTime}' AND rq_Status != 'denied'
 )
 `,
-      (err, results, field) => {
+      (err, results) => {
         if (results.length > 0) resolve(results[0].tb_ID);
         else resolve(0);
       }

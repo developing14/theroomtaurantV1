@@ -1,21 +1,4 @@
-/**
-MODULE MANAGEMENT
- * 
- * 
- * 
- */
-const express = require('express');
-const app = express();
 const authen = require('../model/authentication.model');
-
-/**
-MIDDLEWARES
- * 
- * 
- * 
- */
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Signup for customers
 exports.register = async (req, res) => {
@@ -93,7 +76,7 @@ exports.staffLogin = async (req, res) => {
   }
 };
 
-// Logout for both staffs and customers
+// Logout
 exports.logout = (req, res) => {
   req.session.ID = null;
   req.session.ROLE = null;

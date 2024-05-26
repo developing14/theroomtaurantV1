@@ -1,14 +1,5 @@
-/**
-MODULE MANAGEMENT
- * 
- * 
- * 
- */
-const express = require('express');
 const mysql = require('mysql');
 
-// Set up configuration to connect with DBMS
-//
 const dataConfiguration = mysql.createPool({
   host: 'localhost',
   user: 'root',

@@ -73,12 +73,6 @@ const profile = app.use('/', profileRoutes);
 const managementRoutes = require('./routes/management.routes');
 const management = app.use('/', managementRoutes);
 
-// Log a time whenever next() function is triggered
-app.use((req, res, next) => {
-  console.log('Time: ', Date.now());
-  next();
-});
-
 /**
 SERVER
  * 

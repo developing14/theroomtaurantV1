@@ -54,7 +54,7 @@ PRODUCT ROUTERS MANAGEMENT
  */
 
 // Visit the product board, query all products from database
-managementRouters.get('/productBoard', autho.authStaff, (req, res) => {
+managementRouters.get('/productBoard', (req, res) => {
   dataConnection.query(`SELECT * FROM product`, (err, result, field) => {
     if (err) throw err;
     res.render('layouts/management', { page: 'productBoard', prods: result });

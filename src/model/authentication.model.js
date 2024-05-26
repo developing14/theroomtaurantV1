@@ -1,37 +1,10 @@
-/**
-MODULE MANAGEMENT
- * 
- * 
- * 
- */
-// const express = require('express');
 const dataConnection = require('../connection/dataConnection');
 const bcrypt = require('bcrypt');
-const { emit } = require('process');
-const { resolve } = require('path');
-const { rejects } = require('assert');
-const { brotliCompress } = require('zlib');
-const { readSync } = require('fs');
 
-/**
-DEFINITION
- * 
- * 
- * 
- */
 const saltRounds = 10;
 const pswStaff = '01214308892@CAREER';
 
-/*
-CUSTOMER ACCOUNT MANAGEMENT
-*
-*
-*
-*/
-
-// Check if there is an record in database that store the input email
-// Return a boolean value.
-//
+// Check the existence of customer emails
 exports.findCustomerEmail = async (email) => {
   return new Promise((resolve, rejects) => {
     dataConnection.query(
@@ -45,13 +18,11 @@ exports.findCustomerEmail = async (email) => {
 };
 
 // Get ID of account by email, return the ID or null.
-//
 exports.getCustomerIDByEmail = (email) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT account_ID FROM customer WHERE ctm_email = '${email}'`,
-      (err, result, field) => {
-        if (err) throw err;
+      (err, result) => {
         if (result.length > 0) resolve(result[0].account_ID);
         else resolve(null);
       }
@@ -60,15 +31,11 @@ exports.getCustomerIDByEmail = (email) => {
 };
 
 // Get the hashed password by the email, return the hashed password or null.
-//
-// Due to the uniqueness of emails in database, use it to get the hashed-strings
-//
 exports.getCustomerHashedByEmail = async (email) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT * FROM customer WHERE ctm_email = '${email}'`,
-      async (err, result, fields) => {
-        if (err) throw err;
+      async (err, result) => {
         if (result.length > 0) resolve(result[0].account_pwd);
         else resolve(null);
       }
@@ -77,7 +44,6 @@ exports.getCustomerHashedByEmail = async (email) => {
 };
 
 // Create a new user record in database, return an undefined value
-//
 exports.createCustomer = (name, email, psw, phone) => {
   // Hash the password into a hashed string ...
   bcrypt.hash(psw, saltRounds, (err, result) => {
@@ -88,22 +54,12 @@ exports.createCustomer = (name, email, psw, phone) => {
   });
 };
 
-/**
- * STAFF ACCOUNT MANAGEMENT
- *
- *
- *
- */
-
-// Check if there is an record in database that store the input email
-// Return a boolean value.
-//
+// Check the existence of staff's emails
 exports.findStaffEmail = async (email) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT staff_email FROM staff WHERE staff_email = '${email}'`,
-      async (err, results, fields) => {
-        if (err) rejects(err);
+      async (err, results) => {
         if (results.length > 0) resolve(true);
         else resolve(false);
       }
@@ -112,13 +68,11 @@ exports.findStaffEmail = async (email) => {
 };
 
 // Get ID of account by email, return the ID or null.
-//
 exports.getStaffIDByEmail = (email) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT account_ID FROM staff WHERE staff_email = '${email}'`,
-      (err, result, field) => {
-        if (err) throw err;
+      (err, result) => {
         if (result.length > 0) resolve(result[0].account_ID);
         else resolve(null);
       }
@@ -127,15 +81,11 @@ exports.getStaffIDByEmail = (email) => {
 };
 
 // Get the hashed password by the email, return the hashed password or null.
-//
-// Due to the uniqueness of emails in database, use it to get the hashed-strings
-//
 exports.getStaffHashedByEmail = async (email) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT * FROM staff WHERE staff_email = '${email}'`,
-      async (err, result, fields) => {
-        if (err) throw err;
+      (err, result) => {
         if (result.length > 0) resolve(result[0].account_pwd);
         else resolve(null);
       }
@@ -144,11 +94,9 @@ exports.getStaffHashedByEmail = async (email) => {
 };
 
 // Create a new staff record in database
-//
 exports.createStaff = (name, email, psw, phone) => {
   // Hash the password into a hashed string ...
   bcrypt.hash(psw, saltRounds, (err, result) => {
-    if (err) throw err;
     dataConnection.query(
       `INSERT INTO staff (staff_name, staff_email, account_pwd,staff_phone) VALUES ('${name}', '${email}', '${result}', '${phone}')`
     );

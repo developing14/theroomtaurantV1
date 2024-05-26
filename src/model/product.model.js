@@ -1,8 +1,4 @@
-const express = require('express');
 const dataConnection = require('../connection/dataConnection');
-const { resolve } = require('path');
-const { rejects } = require('assert');
-const { log } = require('console');
 
 // Add new record into product table in database
 exports.addProduct = (name, intro, imgPath, cost, staffID) => {
@@ -13,11 +9,10 @@ exports.addProduct = (name, intro, imgPath, cost, staffID) => {
 
 // Retrieve data of product from database with the ID product
 exports.getProductByID = (ID) => {
-  return new Promise((resolve, rejects) => {
+  return new Promise((resolve) => {
     dataConnection.query(
       `SELECT * FROM product WHERE pd_ID='${ID}'`,
-      (err, result, field) => {
-        if (err) throw err;
+      (err, result) => {
         resolve(result);
       }
     );

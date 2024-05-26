@@ -1,12 +1,5 @@
-const express = require('express');
-const app = express();
 const val = require('../util/Validators.util');
-
 const profileModel = require('../model/profile.model');
-
-// Middlewares
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 exports.editProfile = (req, res) => {
   const newName = req.body.infoName;
@@ -30,9 +23,8 @@ exports.editProfile = (req, res) => {
         break;
       }
       default:
-        return res.send(
-          'You cannot changed your profile now. Please try again'
-        );
+        return res.send('You cannot change your profile now. Please try again');
     }
+
   return res.redirect('/profile');
 };
